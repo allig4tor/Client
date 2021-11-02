@@ -7,4 +7,8 @@ export class ChatService {
     constructor() {
         this.socket = io.connect(this.url, {transports: ['websocket']});
     }
+
+    public sendMessage(message) {
+      this.socket.emit('new-message', message);
+  }
 }

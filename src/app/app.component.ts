@@ -9,6 +9,12 @@ import { ChatService } from './chat.service';
 })
 export class AppComponent {
   title = 'app works!';
+  message: string;
 
-  constructor(chatService: ChatService) { }
+  constructor( private chatService: ChatService) { }
+
+  sendMessage() {
+    this.chatService.sendMessage(this.message);
+    this.message = '';
+  }
 }
